@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// super-nasty n-body 
+// super-nasty n-body
 
 public class bam : MonoBehaviour {
 
-	const int n = 20;
+
+	const int n = 100;
 	GameObject[] pls; 
-	float G = 0.01f;
-	float dt = 0.01f;
+	float G = 0.01f; // physical parameters are made up to give interesting results
+	float dt = 0.1f;
 	Vector3[] F;
 
 	// Use this for initialization
@@ -49,7 +50,7 @@ public class bam : MonoBehaviour {
 			}
 		}
 		// update velocities and positions for each body
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++) { // the worst integrator possible
 			m = pls[i].rigidbody.mass;
 			pls[i].rigidbody.velocity = pls[i].rigidbody.velocity + F[i]/m*dt;
 			pls[i].transform.position = pls[i].transform.position + pls[i].rigidbody.velocity * dt + F[i] / m*dt*dt/2.0f;
