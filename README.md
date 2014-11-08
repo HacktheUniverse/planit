@@ -7,3 +7,7 @@ PlanIt
   <li><a href="https://drive.google.com/a/nyu.edu/file/d/0BzC7ykt2a_4SNks4bC1fS0RmSU0/view?usp=sharing">Wireframes (Proof of Concept)</a></li>
   <li><a href="https://docs.google.com/document/d/1NRsV8z4PRxQyj5KXDFJ7u6r6H8IYyU4FPS8bEOQhfeU/edit?usp=sharing_eid">Process flow</a></li>
 </ul>
+
+<b>Credits</b>
+
+Thanks to http://www.sanhujinka.org/red-dwarf-star.html for inspiration, 
