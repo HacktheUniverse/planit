@@ -52,6 +52,8 @@ public class CustomPlanet : MonoBehaviour
 		gui = slider.transform.parent.gameObject;
 
 		myo = GameObject.FindGameObjectWithTag ("Myo").GetComponent<ThalmicMyo>();
+
+       this.AddComponent<Planet>()
 	}
 	
 	// Update is called once per frame
@@ -93,6 +95,8 @@ public class CustomPlanet : MonoBehaviour
 		//how to get arbitrary range
 		float difference = -1 * slider.transform.position.x + sliderLowerBound;
 		currentScale = difference * massScalar;
+        Planet p = this.GetComponent<Planet>();
+        p.mass = currentScale;
 	}
 
 	void UpdateVelocity()
@@ -100,12 +104,22 @@ public class CustomPlanet : MonoBehaviour
 		//how to get arbitrary range
 		float difference = -1 * slider.transform.position.x + sliderLowerBound;
 		currentVelocity = difference;
+        Planet p = this.GetComponent<Planet>();
+        Vector3 dir = transform.Forward();
+        p.v[0] = currentScale * dir.x;
+        p.v[1] = currentScale * dir.y;
+        p.v[2] = currentScale * dir.z;
 	}
 
 	void UpdateDistance()
 	{
 		float difference = -1 * slider.transform.position.x + sliderLowerBound;
 		currentDistance = difference * distanceScalar;
+
+        Planet p = this.GetComponent<Planet>();
+        p.pos[0] = currentDistance;
+        p.pos[1] = currentDistance;
+        p.pos[2] = currentDistance;
 	}
 
 	void IncrementStage()
