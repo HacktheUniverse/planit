@@ -10,6 +10,12 @@ PlanIt
   <li><a href="http://invis.io/S91NQTD7Z">Clickthrough UI Prototype</a></li>
 </ul>
 
+We have an API -- it's not integrated.
+
+It provides a front-end api if a user so chose to use it. We have approximately 301 of the 1850 exoplanets from <a href="http://exoplanet.eu/catalog">exoplanet.eu</a> -- Check out <a href="https://github.com/geoffryan/PlanIt/blob/master/Assets/Scripts/CSVParser.cs">This file</a> for documentation.
+
+One can look through it by hooking into it, code would have to be modified but one can look-through the CSVParser.exoplanets List once it is populated by our code...we make available the name of the exoplanet, the star that it is neighboring, and all of its orbital properties. We also track stars and the planets that orbit that star...and that star's properties as well. Pretty cool stuff. Had a lot of fun implementing this. 
+
 
 <b>Credits</b>
 
