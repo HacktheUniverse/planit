@@ -34,9 +34,33 @@ public class PlanetSamples : MonoBehaviour
         double eMar = 0.0934;
         double iMar = 1.85 * deg2rad; //degrees
 
+        double MJup = 1.8986e27; //kilograms
+        double aJup = 7.785472e11; //meters
+        double TJup = 4332.59 * 8.64e4; //seconds
+        double eJup = 0.048775;
+        double iJup = 1.305 * deg2rad; //degrees
+
+        double MSat = 5.6846e26; //kilograms
+        double aSat = 1.43344937e12; //meters
+        double TSat = 10759.22 * 8.64e4; //seconds
+        double eSat = 0.055723219;
+        double iSat = 2.485240 * deg2rad; //degrees
+
+        double MUra = 8.6810e25; //kilograms
+        double aUra = 2.8706714e12; //meters
+        double TUra = 3068715 * 8.64e4; //seconds
+        double eUra = 0.047220087;
+        double iUra = 0.772556 * deg2rad; //degrees
+
+        double MNep = 1.0243e26; //kilograms
+        double aNep = 4.4985426e12; //meters
+        double TNep = 60190.03 * 8.64e4; //seconds
+        double eNep = 0.00867797;
+        double iNep = 1.767975 * deg2rad; //degrees
+
         System.Random rand = new System.Random();
 
-        double scale = 1.0e10;
+        double scale = 4.0e10;
         double phi;
 
         createPlanet(MSun, 0.0, 1.0, 0.0, 0.0, 0.0, scale);
@@ -48,6 +72,21 @@ public class PlanetSamples : MonoBehaviour
         createPlanet(MEar, aEar, TEar, eEar, iEar, phi, scale);
         phi = 2*System.Math.PI * rand.NextDouble();
         createPlanet(MMar, aMar, TMar, eMar, iMar, phi, scale);
+        phi = 2*System.Math.PI * rand.NextDouble();
+        createPlanet(MJup, aJup, TJup, eJup, iJup, phi, scale);
+        phi = 2*System.Math.PI * rand.NextDouble();
+        createPlanet(MSat, aSat, TSat, eSat, iSat, phi, scale);
+        phi = 2*System.Math.PI * rand.NextDouble();
+        createPlanet(MUra, aUra, TUra, eUra, iUra, phi, scale);
+        phi = 2*System.Math.PI * rand.NextDouble();
+        createPlanet(MNep, aNep, TNep, eNep, iNep, phi, scale);
+
+        phi = 2*System.Math.PI * rand.NextDouble();
+        double[] r = new double[3];
+        double[] v = new double[3];
+        r[0] = 2*aNep; r[1] = 0.0; r[2] = 0.0;
+        v[0] = -2.0e5; v[1] = 0.0; v[2] = 0.0;
+        Planet.MakeAPlanet(5.0e29, r, v, scale);
 
         GameObject o = new GameObject("Neil");
         o.AddComponent<Camera>();
