@@ -77,7 +77,7 @@ public class bam : MonoBehaviour {
 					o=pls[i].transform.position;
 					r = o.magnitude;
 					Vector3.Normalize(o);
-					F [i] = F [i] - G * o * pls[i].rigidbody.mass * NFW(r); // just pull it to the origin, a point mass of mass M(r)
+					F [i] = F [i] - G * o * pls[i].rigidbody.mass * NFW(r)/(r*r); // just pull it to the origin, a point mass of mass M(r)
 				}
 			}
 		}
