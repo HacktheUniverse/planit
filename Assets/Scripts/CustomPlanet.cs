@@ -31,7 +31,7 @@ public class CustomPlanet : MonoBehaviour
 	float currentVelocity = 0;
 	float currentDistance = 0;
 
-	float massScalar = 5;
+	float massScalar = 1E27f;
 	float distanceScalar = 10;
 	float velocityScalar = 1;
 
@@ -52,8 +52,6 @@ public class CustomPlanet : MonoBehaviour
 		gui = slider.transform.parent.gameObject;
 
 		myo = GameObject.FindGameObjectWithTag ("Myo").GetComponent<ThalmicMyo>();
-
-       this.AddComponent<Planet>()
 	}
 	
 	// Update is called once per frame
@@ -94,9 +92,8 @@ public class CustomPlanet : MonoBehaviour
 	{
 		//how to get arbitrary range
 		float difference = -1 * slider.transform.position.x + sliderLowerBound;
-		currentScale = difference * massScalar;
-        Planet p = this.GetComponent<Planet>();
-        p.mass = currentScale;
+		currentScale = -1 * difference * massScalar;
+        
 	}
 
 	void UpdateVelocity()
@@ -104,11 +101,7 @@ public class CustomPlanet : MonoBehaviour
 		//how to get arbitrary range
 		float difference = -1 * slider.transform.position.x + sliderLowerBound;
 		currentVelocity = difference;
-        Planet p = this.GetComponent<Planet>();
-        Vector3 dir = transform.Forward();
-        p.v[0] = currentScale * dir.x;
-        p.v[1] = currentScale * dir.y;
-        p.v[2] = currentScale * dir.z;
+        
 	}
 
 	void UpdateDistance()
@@ -116,10 +109,7 @@ public class CustomPlanet : MonoBehaviour
 		float difference = -1 * slider.transform.position.x + sliderLowerBound;
 		currentDistance = difference * distanceScalar;
 
-        Planet p = this.GetComponent<Planet>();
-        p.pos[0] = currentDistance;
-        p.pos[1] = currentDistance;
-        p.pos[2] = currentDistance;
+       
 	}
 
 	void IncrementStage()
@@ -142,7 +132,22 @@ public class CustomPlanet : MonoBehaviour
 			GameObject newGameObject = (GameObject)Instantiate(planetPrefab);
 			newGameObject.transform.localScale = new Vector3(currentScale, currentScale, currentScale);
 			newGameObject.transform.position = new Vector3(currentDistance, 0, 0);
+			Planet p = newGameObject.AddComponent<Planet>();
+			p.Start();
+			newGameObject.tag = "Planet";
+			p.mass = currentScale;
 
+	        Vector3 dir = transform.forward;
+	        p.vel[0] = currentVelocity * dir.x;
+			p.vel[1] = currentVelocity * dir.y;
+			p.vel[2] = currentVelocity * dir.z;
+
+			p.pos[0] = currentDistance * 4.0E10f;
+			p.pos[1] = 0;
+			p.pos[2] = 0;
+
+			p.scale = 4.0E10f;
+			
 			slider.tag = "Untagged";
 			Destroy (slider.transform.parent.gameObject);
 

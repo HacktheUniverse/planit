@@ -10,7 +10,7 @@ public class Planet : MonoBehaviour {
     public bool exists = false;
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
         Debug.Log("Starting Planet");
         if(!exists)
         {

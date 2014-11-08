@@ -15,7 +15,7 @@ public class PlanetManager : MonoBehaviour
 		allPlanets = new List<Planet> ();
 
         //SampleStart();
-        PlanetSamples.TheSolarSystem();
+        //PlanetSamples.TheSolarSystem();
 
         FindAllPlanets();
 	}
@@ -23,6 +23,7 @@ public class PlanetManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		FindAllPlanets ();
         SymplecticTimestep();
 	}
 
