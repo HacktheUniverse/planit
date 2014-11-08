@@ -6,6 +6,7 @@ public class Planet : MonoBehaviour {
     public double mass;
     public double[] pos;
     public double[] vel;
+    public double scale;
     public bool exists = false;
 
 	// Use this for initialization
@@ -23,16 +24,23 @@ public class Planet : MonoBehaviour {
             vel[0] = 0.0;
             vel[1] = 0.0;
             vel[2] = 0.0;
+            scale = 1.0;
             exists = true;
         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    this.transform.position = new Vector3((float)pos[0], (float)pos[1], (float)pos[2]);
+	    this.transform.position = new Vector3((float)(pos[0]/scale), 
+                                            (float)(pos[1]/scale), 
+                                            (float)(pos[2]/scale));
 	}
 
     public static void MakeAPlanet(double m, double[] r, double[] v)
+    {
+        MakeAPlanet(m, r, v, 1.0);
+    }
+    public static void MakeAPlanet(double m, double[] r, double[] v, double scale)
     {
         GameObject o = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         o.transform.position = new Vector3((float)r[0], (float)r[1], (float)r[2]);
@@ -47,7 +55,6 @@ public class Planet : MonoBehaviour {
         p.vel[0] = v[0];
         p.vel[1] = v[1];
         p.vel[2] = v[2];
+        p.scale = scale;
     }
-
-
 }

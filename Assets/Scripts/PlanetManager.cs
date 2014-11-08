@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class PlanetManager : MonoBehaviour 
 {
 	List<Planet> allPlanets;
-    double G = 1.0;
-    double dt = 0.05;
+    double G = 6.673e-11;
+    double dt = 1.0e5;
 
 	// Use this for initialization
 	void Start () 
@@ -14,10 +14,10 @@ public class PlanetManager : MonoBehaviour
 		//initialize our list
 		allPlanets = new List<Planet> ();
 
-        SampleStart();
+        //SampleStart();
+        PlanetSamples.TheSolarSystem();
 
         FindAllPlanets();
-        G = 1.0;
 	}
 	
 	// Update is called once per frame
@@ -29,6 +29,7 @@ public class PlanetManager : MonoBehaviour
 	void FindAllPlanets()
 	{
 		GameObject[] planetArray = GameObject.FindGameObjectsWithTag ("Planet");
+        allPlanets = new List<Planet>();
 
 		for(int i = 0; i < planetArray.Length; i++)
 		{
@@ -57,8 +58,8 @@ public class PlanetManager : MonoBehaviour
         v2[1] = -0.5;
         v2[2] = 0.0;
 
-        Planet.MakeAPlanet(1.0, r1, v1);
-        Planet.MakeAPlanet(1.0, r2, v2);
+        Planet.MakeAPlanet(1.0, r1, v1, 0.2);
+        Planet.MakeAPlanet(1.0, r2, v2, 0.2);
     }
 
     void CalcForces(double[] mass, double[,] pos, double[,] fArr)
