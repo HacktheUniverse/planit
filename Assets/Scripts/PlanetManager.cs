@@ -6,7 +6,7 @@ public class PlanetManager : MonoBehaviour
 {
 	List<Planet> allPlanets;
     double G = 6.673e-11;
-    double dt = 1.0e5;
+    double dt = 4.0e4;
 
 	// Use this for initialization
 	void Start () 
