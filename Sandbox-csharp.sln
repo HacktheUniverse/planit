@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{2652EEC9-77DC-B2A5-AEA8-5F5BEC235B05}") = "Sandbox", "Assembly-CSharp-vs.csproj", "{794C352D-AE29-CD68-340F-08D5C4129C5C}"
 EndProject
+Project("{2652EEC9-77DC-B2A5-AEA8-5F5BEC235B05}") = "Sandbox", "Assembly-CSharp-Editor-vs.csproj", "{24DE0BF4-F8D1-F757-E71D-E5E90E60A6C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{794C352D-AE29-CD68-340F-08D5C4129C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{794C352D-AE29-CD68-340F-08D5C4129C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{794C352D-AE29-CD68-340F-08D5C4129C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DE0BF4-F8D1-F757-E71D-E5E90E60A6C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DE0BF4-F8D1-F757-E71D-E5E90E60A6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DE0BF4-F8D1-F757-E71D-E5E90E60A6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DE0BF4-F8D1-F757-E71D-E5E90E60A6C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-		GlobalSection(MonoDevelopProperties) = preSolution
+									GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
