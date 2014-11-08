@@ -2,9 +2,12 @@
 using System.Collections;
 
 /*
- * super-cheap n-body
+ * Super-cheap n-body
+ * 
+ * Sometimes the random inital positions of the spheres is off screen at the start. Try re-initiating the script if so. 
  * 
  * waltp
+ * 
  */
 
 public class bam : MonoBehaviour {
@@ -32,13 +35,19 @@ public class bam : MonoBehaviour {
 	}
 
 	Vector3 newton(GameObject p, GameObject q) { // force on p due to q
-		Vector3 rp, rq;
+		Vector3 rp, rq, r;
 		rp = p.transform.position;
 		rq = q.transform.position;
+		r = rp - rq;
 		return  -G *
 				p.rigidbody.mass *	
 				q.rigidbody.mass *
-				1/Mathf.Pow((rp-rq).sqrMagnitude,1.5f) * (rp-rq);
+				1/r.sqrMagnitude * r.normalized;
+	}
+
+	Vector3 darkmatter(GameObject p) { // force due to dark matter
+		Vector3 r = p.transform.position;
+		return -G * r.normalized * p.rigidbody.mass * NFW (r.magnitude) / r.sqrMagnitude; // just pull it to the origin, a point mass of mass M(r)
 	}
 
 	float NFW(float r) { // NFW dark matter profile
@@ -66,25 +75,20 @@ public class bam : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float m;
-		Vector3 o;
-		float r;
 		// calculate net force on each body
 		for (int i = 0; i < n; i++) {
 			F [i] = Vector3.zero;
 			for (int j = 0; j < n; j++) {
 				if (i != j) {
 					F [i] = F [i] + newton (pls [i], pls [j]);
-					o=pls[i].transform.position;
-					r = o.magnitude;
-					Vector3.Normalize(o);
-					F [i] = F [i] - G * o * pls[i].rigidbody.mass * NFW(r); // just pull it to the origin, a point mass of mass M(r)
+					F [i] = F [i] + darkmatter (pls[i]);
 				}
 			}
 		}
 		// update velocities and positions for each body
 		for (int i = 0; i < n; i++) { // the worst integrator possible
 			m = pls[i].rigidbody.mass;
-			pls[i].rigidbody.velocity = pls[i].rigidbody.velocity + F[i]/m*dt;
+			pls[i].rigidbody.velocity = pls[i].rigidbody.velocity + F[i]/m*dt; // Physics 101
 			pls[i].transform.position = pls[i].transform.position + pls[i].rigidbody.velocity * dt + F[i] / m*dt*dt/2.0f;
 		}
 	}
