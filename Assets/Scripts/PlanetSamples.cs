@@ -31,8 +31,8 @@ public class PlanetSamples : MonoBehaviour
         v2[1] = -0.5;
         v2[2] = 0.0;
 
-        Planet.MakeAPlanet(1.0, r1, v1);
-        Planet.MakeAPlanet(1.0, r2, v2);
+        Planet.MakeAPlanet(1.0, r1, v1, "", 1.0);
+        Planet.MakeAPlanet(1.0, r2, v2, "", 1.0);
     }
 
 
@@ -100,23 +100,34 @@ public class PlanetSamples : MonoBehaviour
 
         double phi;
 
-        createPlanet(MSun, 0.0, 1.0, 0.0, 0.0, 0.0);
+        string tex;
+
+        tex = "yellow_dwarf";
+        createPlanet(MSun, 0.0, 1.0, 0.0, 0.0, 0.0, tex, 1.0);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MMer, aMer, TMer, eMer, iMer, phi);
+        tex = "dead2p";
+        createPlanet(MMer, aMer, TMer, eMer, iMer, phi, tex, 0.2);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MVen, aVen, TVen, eVen, iVen, phi);
+        tex = "blue_giant_real";
+        createPlanet(MVen, aVen, TVen, eVen, iVen, phi, tex, 0.4);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MEar, aEar, TEar, eEar, iEar, phi);
+        tex = "new-itokawa-mosaic";
+        createPlanet(MEar, aEar, TEar, eEar, iEar, phi, tex, 0.5);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MMar, aMar, TMar, eMar, iMar, phi);
+        tex = "red_dwarf";
+        createPlanet(MMar, aMar, TMar, eMar, iMar, phi, tex, 0.6);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MJup, aJup, TJup, eJup, iJup, phi);
+        tex = "dotted2p";
+        createPlanet(MJup, aJup, TJup, eJup, iJup, phi, tex, 0.9);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MSat, aSat, TSat, eSat, iSat, phi);
+        tex = "moon_real";
+        createPlanet(MSat, aSat, TSat, eSat, iSat, phi, tex, 0.8);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MUra, aUra, TUra, eUra, iUra, phi);
+        tex = "blue_giant_color";
+        createPlanet(MUra, aUra, TUra, eUra, iUra, phi, tex, 0.8);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MNep, aNep, TNep, eNep, iNep, phi);
+        tex = "bluegas2p";
+        createPlanet(MNep, aNep, TNep, eNep, iNep, phi, tex, 0.8);
 
         if(plutosrevenge)
         {
@@ -125,7 +136,8 @@ public class PlanetSamples : MonoBehaviour
             double[] v = new double[3];
             r[0] = 2*aNep; r[1] = 0.0; r[2] = 0.0;
             v[0] = -2.0e5; v[1] = 0.0; v[2] = 0.0;
-            Planet.MakeAPlanet(5.0e29, r, v);
+            tex = "yellow_dwarf";
+            Planet.MakeAPlanet(5.0e29, r, v, tex, 2.0);
         }
 
         GameObject o = new GameObject("Neil");
@@ -137,7 +149,7 @@ public class PlanetSamples : MonoBehaviour
 
     }
 
-    static void createPlanet(double mass, double a, double T, double e, double i, double phi)
+    static void createPlanet(double mass, double a, double T, double e, double i, double phi, string tex, double radius)
     {
         double[] r = new double[3];
         double[] v = new double[3];
@@ -151,6 +163,6 @@ public class PlanetSamples : MonoBehaviour
         v[2] = -vp * System.Math.Sin(phi);
         v[0] =  vp * System.Math.Cos(phi);
 
-        Planet.MakeAPlanet(mass, r, v);
+        Planet.MakeAPlanet(mass, r, v, tex, radius);
     }
 }

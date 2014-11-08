@@ -35,12 +35,13 @@ public class Planet : MonoBehaviour {
                                             (float)(pos[2]/PlanetManager.lscale));
 	}
 
-    public static void MakeAPlanet(double m, double[] r, double[] v)
+    public static void MakeAPlanet(double m, double[] r, double[] v, string tex, double radius)
     {
         double scale = PlanetManager.lscale;
 
         GameObject o = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         o.transform.position = new Vector3((float)(r[0]/scale), (float)(r[1]/scale), (float)(r[2]/scale));
+        o.transform.localScale = new Vector3((float) radius,(float) radius,(float) radius);
         o.tag = "Planet";
         o.AddComponent<Planet>();
         Planet p = o.GetComponent<Planet>();
@@ -53,7 +54,8 @@ public class Planet : MonoBehaviour {
         p.vel[1] = v[1];
         p.vel[2] = v[2];
 
-		o.renderer.material.mainTexture = Resources.Load<Texture> ("Moon");
+        if(tex != "")
+		    o.renderer.material.mainTexture = Resources.Load<Texture> (tex);
 
     }
 }
