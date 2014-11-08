@@ -5,9 +5,11 @@ using System.Collections.Generic;
 public class PlanetManager : MonoBehaviour 
 {
 	List<Planet> allPlanets;
-    //double G = 6.673e-11;
-	double G = 1;
-    double dt = 0.01;
+	public static double G = 1;
+    public static double dt = 0.01;
+    public static double lscale = 1.0;
+    public static double vscale = 1.0;
+    public static double mscale = 1.0;
 
 	// Use this for initialization
 	void Start () 
@@ -15,8 +17,8 @@ public class PlanetManager : MonoBehaviour
 		//initialize our list
 		allPlanets = new List<Planet> ();
 
-        //SampleStart();
-        //PlanetSamples.TheSolarSystem();
+        PlanetSamples.TheSolarSystem(false);
+        //PlanetSamples.TwoBodyStart();
 
         FindAllPlanets();
 	}
@@ -38,31 +40,6 @@ public class PlanetManager : MonoBehaviour
 			allPlanets.Add(planetArray[i].GetComponent<Planet>() );
 		}
 	}
-
-    void SampleStart()
-    {
-        double[] r1 = new double[3];
-        double[] r2 = new double[3];
-        double[] v1 = new double[3];
-        double[] v2 = new double[3];
-
-        r1[0] = 1.0;
-        r1[1] = 1.0;
-        r1[2] = 0.0;
-        r2[0] = -1.0;
-        r2[1] = 1.0;
-        r2[2] = 0.0;
-        
-        v1[0] = 0.0;
-        v1[1] = 0.5;
-        v1[2] = 0.0;
-        v2[0] = 0.0;
-        v2[1] = -0.5;
-        v2[2] = 0.0;
-
-        Planet.MakeAPlanet(1.0, r1, v1, 0.2);
-        Planet.MakeAPlanet(1.0, r2, v2, 0.2);
-    }
 
     void CalcForces(double[] mass, double[,] pos, double[,] fArr)
     {

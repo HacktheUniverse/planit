@@ -4,8 +4,46 @@ using System.Collections.Generic;
 
 public class PlanetSamples : MonoBehaviour
 {
-    public static void TheSolarSystem()
+    public static void TwoBodyStart()
     {
+        PlanetManager.G = 1.0;
+        PlanetManager.dt = 0.1;
+        PlanetManager.lscale = 1.0;
+        PlanetManager.vscale = 1.0;
+        PlanetManager.mscale = 1.0;
+
+        double[] r1 = new double[3];
+        double[] r2 = new double[3];
+        double[] v1 = new double[3];
+        double[] v2 = new double[3];
+
+        r1[0] = 1.0;
+        r1[1] = 1.0;
+        r1[2] = 0.0;
+        r2[0] = -1.0;
+        r2[1] = 1.0;
+        r2[2] = 0.0;
+        
+        v1[0] = 0.0;
+        v1[1] = 0.5;
+        v1[2] = 0.0;
+        v2[0] = 0.0;
+        v2[1] = -0.5;
+        v2[2] = 0.0;
+
+        Planet.MakeAPlanet(1.0, r1, v1);
+        Planet.MakeAPlanet(1.0, r2, v2);
+    }
+
+
+    public static void TheSolarSystem(bool plutosrevenge)
+    {
+        PlanetManager.G = 6.673e-11;
+        PlanetManager.dt = 3.0e4;
+        PlanetManager.lscale = 4.0e10;
+        PlanetManager.vscale = 1.0e3;
+        PlanetManager.mscale = 1.0e27;
+
         double deg2rad = System.Math.PI/180.0;
 
         double MSun = 1.989e30;
@@ -60,33 +98,35 @@ public class PlanetSamples : MonoBehaviour
 
         System.Random rand = new System.Random();
 
-        double scale = 4.0e10;
         double phi;
 
-        createPlanet(MSun, 0.0, 1.0, 0.0, 0.0, 0.0, scale);
+        createPlanet(MSun, 0.0, 1.0, 0.0, 0.0, 0.0);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MMer, aMer, TMer, eMer, iMer, phi, scale);
+        createPlanet(MMer, aMer, TMer, eMer, iMer, phi);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MVen, aVen, TVen, eVen, iVen, phi, scale);
+        createPlanet(MVen, aVen, TVen, eVen, iVen, phi);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MEar, aEar, TEar, eEar, iEar, phi, scale);
+        createPlanet(MEar, aEar, TEar, eEar, iEar, phi);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MMar, aMar, TMar, eMar, iMar, phi, scale);
+        createPlanet(MMar, aMar, TMar, eMar, iMar, phi);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MJup, aJup, TJup, eJup, iJup, phi, scale);
+        createPlanet(MJup, aJup, TJup, eJup, iJup, phi);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MSat, aSat, TSat, eSat, iSat, phi, scale);
+        createPlanet(MSat, aSat, TSat, eSat, iSat, phi);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MUra, aUra, TUra, eUra, iUra, phi, scale);
+        createPlanet(MUra, aUra, TUra, eUra, iUra, phi);
         phi = 2*System.Math.PI * rand.NextDouble();
-        createPlanet(MNep, aNep, TNep, eNep, iNep, phi, scale);
+        createPlanet(MNep, aNep, TNep, eNep, iNep, phi);
 
-        phi = 2*System.Math.PI * rand.NextDouble();
-        double[] r = new double[3];
-        double[] v = new double[3];
-        r[0] = 2*aNep; r[1] = 0.0; r[2] = 0.0;
-        v[0] = -2.0e5; v[1] = 0.0; v[2] = 0.0;
-        Planet.MakeAPlanet(5.0e29, r, v, scale);
+        if(plutosrevenge)
+        {
+            phi = 2*System.Math.PI * rand.NextDouble();
+            double[] r = new double[3];
+            double[] v = new double[3];
+            r[0] = 2*aNep; r[1] = 0.0; r[2] = 0.0;
+            v[0] = -2.0e5; v[1] = 0.0; v[2] = 0.0;
+            Planet.MakeAPlanet(5.0e29, r, v);
+        }
 
         GameObject o = new GameObject("Neil");
         o.AddComponent<Camera>();
@@ -97,7 +137,7 @@ public class PlanetSamples : MonoBehaviour
 
     }
 
-    static void createPlanet(double mass, double a, double T, double e, double i, double phi, double scale)
+    static void createPlanet(double mass, double a, double T, double e, double i, double phi)
     {
         double[] r = new double[3];
         double[] v = new double[3];
@@ -111,6 +151,6 @@ public class PlanetSamples : MonoBehaviour
         v[2] = -vp * System.Math.Sin(phi);
         v[0] =  vp * System.Math.Cos(phi);
 
-        Planet.MakeAPlanet(mass, r, v, scale);
+        Planet.MakeAPlanet(mass, r, v);
     }
 }

@@ -137,18 +137,16 @@ public class CustomPlanet : MonoBehaviour
 			Planet p = newGameObject.AddComponent<Planet>();
 			p.Start();
 
-			p.mass = currentScale;
+			p.mass = currentScale * PlanetManager.mscale;
 
 	        Vector3 dir = transform.forward;
-	        p.vel[0] = currentVelocity * dir.x;
-			p.vel[1] = currentVelocity * dir.y;
-			p.vel[2] = currentVelocity * dir.z;
+	        p.vel[0] = currentVelocity * PlanetManager.vscale * dir.x;
+			p.vel[1] = currentVelocity * PlanetManager.vscale * dir.y;
+			p.vel[2] = currentVelocity * PlanetManager.vscale * dir.z;
 
-			p.pos[0] = currentDistance;
+			p.pos[0] = currentDistance * PlanetManager.lscale;
 			p.pos[1] = 0;
 			p.pos[2] = 0;
-
-			p.scale = 1;
 			
 			slider.tag = "Untagged";
 			Destroy (slider.transform.parent.gameObject);
