@@ -50,11 +50,16 @@ public class CustomPlanet : MonoBehaviour
 		gui.transform.Rotate (90f, 0f, 0f);
 		slider = GameObject.FindGameObjectWithTag("Slider");
 		gui = slider.transform.parent.gameObject;
+
+		myo = GameObject.FindGameObjectWithTag ("Myo").GetComponent<ThalmicMyo>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if(slider == null)
+			slider = GameObject.FindGameObjectWithTag("Slider");
+
 		UpdateSlider ();
 
 		if(myo.pose == Thalmic.Myo.Pose.Fist && !isFistActionActive)
@@ -124,7 +129,9 @@ public class CustomPlanet : MonoBehaviour
 			newGameObject.transform.localScale = new Vector3(currentScale, currentScale, currentScale);
 			newGameObject.transform.position = new Vector3(currentDistance, 0, 0);
 
+			slider.tag = "Untagged";
 			Destroy (slider.transform.parent.gameObject);
+
 		}
 	}
 
