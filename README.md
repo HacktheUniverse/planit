@@ -1,5 +1,6 @@
 PlanIt
 ======
+<b>Challenge</b>: Education
 
 <b>Documentation</b>
 
