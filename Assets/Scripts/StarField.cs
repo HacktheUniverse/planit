@@ -5,7 +5,7 @@ public class StarField : MonoBehaviour
 {
 	[SerializeField]
 	private GameObject starPrefab;
-
+	
 	private int starCount = 50;
 	private float starFieldResolution = 100;
 
