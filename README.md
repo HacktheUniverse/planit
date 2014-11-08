@@ -10,4 +10,10 @@ PlanIt
 
 <b>Credits</b>
 
-Thanks to http://www.sanhujinka.org/red-dwarf-star.html for inspiration, 
+Thanks to http://www.sanhujinka.org/red-dwarf-star.html for inspiration, http://www.mmedia.is/bjj/misc/mapmaking/gas_giant_texture_maps.html for blue gas giant maps,
+NASA's great repository at http://nasa3d.arc.nasa.gov/images,
+http://planetpixelemporium.com/planets.html, for some inspiration, 
+http://fossies.org/linux/misc/celestia-1.6.1.tar.gz/index_sa.html, and
+http://www.celestiamotherlode.net/catalog/extrasolar_stars.php
+
+Please let us know if we have omitted attribution. Thanks for these textures!
