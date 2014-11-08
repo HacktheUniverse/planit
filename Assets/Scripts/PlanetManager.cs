@@ -61,23 +61,6 @@ public class PlanetManager : MonoBehaviour
         MakeAPlanet(1.0, r2, v2);
     }
 
-    void MakeAPlanet(double m, double[] r, double[] v)
-    {
-        GameObject o = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        o.transform.position = new Vector3((float)r[0], (float)r[1], (float)r[2]);
-        o.tag = "Planet";
-        o.AddComponent<Planet>();
-        Planet p = o.GetComponent<Planet>();
-        p.Start();
-        p.mass = m;
-        p.pos[0] = r[0];
-        p.pos[1] = r[1];
-        p.pos[2] = r[2];
-        p.vel[0] = v[0];
-        p.vel[1] = v[1];
-        p.vel[2] = v[2];
-    }
-
     void CalcForces(double[] mass, double[,] pos, double[,] fArr)
     {
         int i,j;
