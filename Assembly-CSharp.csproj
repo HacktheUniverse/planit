@@ -46,6 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Myo Samples\Scripts\ColorBoxByPose.cs" />
+     <Compile Include="Assets\Myo Samples\Scripts\JointOrientation.cs" />
+     <Compile Include="Assets\Myo Samples\Scripts\SampleSceneGUI.cs" />
+     <Compile Include="Assets\Myo\Scripts\Myo.NET\EventTypes.cs" />
+     <Compile Include="Assets\Myo\Scripts\Myo.NET\Hub.cs" />
+     <Compile Include="Assets\Myo\Scripts\Myo.NET\Myo.cs" />
+     <Compile Include="Assets\Myo\Scripts\Myo.NET\Pose.cs" />
+     <Compile Include="Assets\Myo\Scripts\Myo.NET\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\Myo\Scripts\Myo.NET\Quaternion.cs" />
+     <Compile Include="Assets\Myo\Scripts\Myo.NET\Vector3.cs" />
+     <Compile Include="Assets\Myo\Scripts\Myo.NET\libmyo.cs" />
+     <Compile Include="Assets\Myo\Scripts\ThalmicHub.cs" />
+     <Compile Include="Assets\Myo\Scripts\ThalmicMyo.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRDisplay.cs" />
@@ -61,6 +74,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRPlayerController.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+     <Compile Include="Assets\Scripts\MyoController.cs" />
      <Compile Include="Assets\Scripts\Planet.cs" />
      <Compile Include="Assets\Scripts\PlanetManager.cs" />
      <Compile Include="Assets\Scripts\ScreenSystem.cs" />
@@ -69,6 +83,7 @@
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Myo\README-MyoUnity.txt" />
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
   </ItemGroup>
