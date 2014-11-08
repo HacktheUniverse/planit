@@ -8,6 +8,11 @@ PlanIt
   <li><a href="https://docs.google.com/document/d/1NRsV8z4PRxQyj5KXDFJ7u6r6H8IYyU4FPS8bEOQhfeU/edit?usp=sharing_eid">Process flow</a></li>
 </ul>
 
+<b>Demos</b>
+<ul>
+  <li><a href="http://invis.io/S91NQTD7Z">Clickthrough UI Prototype</a></li>
+</ul>
+
 <b>Credits</b>
 
 Thanks to http://www.sanhujinka.org/red-dwarf-star.html for inspiration, http://www.mmedia.is/bjj/misc/mapmaking/gas_giant_texture_maps.html for blue gas giant maps,
