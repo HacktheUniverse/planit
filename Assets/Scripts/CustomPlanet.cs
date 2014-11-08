@@ -31,7 +31,7 @@ public class CustomPlanet : MonoBehaviour
 	float currentVelocity = 0;
 	float currentDistance = 0;
 
-	float massScalar = 1E27f;
+	float massScalar = 1;
 	float distanceScalar = 10;
 	float velocityScalar = 1;
 
@@ -132,9 +132,11 @@ public class CustomPlanet : MonoBehaviour
 			GameObject newGameObject = (GameObject)Instantiate(planetPrefab);
 			newGameObject.transform.localScale = new Vector3(currentScale, currentScale, currentScale);
 			newGameObject.transform.position = new Vector3(currentDistance, 0, 0);
+			newGameObject.tag = "Planet";
+
 			Planet p = newGameObject.AddComponent<Planet>();
 			p.Start();
-			newGameObject.tag = "Planet";
+
 			p.mass = currentScale;
 
 	        Vector3 dir = transform.forward;
@@ -142,11 +144,11 @@ public class CustomPlanet : MonoBehaviour
 			p.vel[1] = currentVelocity * dir.y;
 			p.vel[2] = currentVelocity * dir.z;
 
-			p.pos[0] = currentDistance * 4.0E10f;
+			p.pos[0] = currentDistance;
 			p.pos[1] = 0;
 			p.pos[2] = 0;
 
-			p.scale = 4.0E10f;
+			p.scale = 1;
 			
 			slider.tag = "Untagged";
 			Destroy (slider.transform.parent.gameObject);

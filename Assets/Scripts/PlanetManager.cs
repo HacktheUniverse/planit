@@ -5,8 +5,9 @@ using System.Collections.Generic;
 public class PlanetManager : MonoBehaviour 
 {
 	List<Planet> allPlanets;
-    double G = 6.673e-11;
-    double dt = 4.0e4;
+    //double G = 6.673e-11;
+	double G = 1;
+    double dt = 0.01;
 
 	// Use this for initialization
 	void Start () 
