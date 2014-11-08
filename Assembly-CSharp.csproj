@@ -74,11 +74,16 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRPlayerController.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+     <Compile Include="Assets\Scripts\FlightVR.cs" />
      <Compile Include="Assets\Scripts\MyoController.cs" />
+     <Compile Include="Assets\Scripts\OrbitingPlanet.cs" />
      <Compile Include="Assets\Scripts\Planet.cs" />
+     <Compile Include="Assets\Scripts\PlanetLauncher.cs" />
      <Compile Include="Assets\Scripts\PlanetManager.cs" />
+     <Compile Include="Assets\Scripts\PlanetSpawner.cs" />
      <Compile Include="Assets\Scripts\ScreenSystem.cs" />
      <Compile Include="Assets\Scripts\SkyboxMesh.cs" />
+     <Compile Include="Assets\Scripts\StarField.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
