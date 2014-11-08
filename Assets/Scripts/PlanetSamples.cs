@@ -41,8 +41,8 @@ public class PlanetSamples : MonoBehaviour
         PlanetManager.G = 6.673e-11;
         PlanetManager.dt = 3.0e4;
         PlanetManager.lscale = 4.0e10;
-        PlanetManager.vscale = 1.0e3;
-        PlanetManager.mscale = 1.0e27;
+        PlanetManager.vscale = 1.0e4;
+        PlanetManager.mscale = 1.0e25;
 
         double deg2rad = System.Math.PI/180.0;
 

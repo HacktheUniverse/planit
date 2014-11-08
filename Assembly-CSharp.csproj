@@ -74,6 +74,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRPlayerController.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+     <Compile Include="Assets\Scripts\CSVParser.cs" />
      <Compile Include="Assets\Scripts\CustomPlanet.cs" />
      <Compile Include="Assets\Scripts\CustomPlanetSpawner.cs" />
      <Compile Include="Assets\Scripts\FlightVR.cs" />

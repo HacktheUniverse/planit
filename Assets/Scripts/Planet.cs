@@ -52,5 +52,8 @@ public class Planet : MonoBehaviour {
         p.vel[0] = v[0];
         p.vel[1] = v[1];
         p.vel[2] = v[2];
+
+		o.renderer.material.mainTexture = Resources.Load<Texture> ("Moon");
+
     }
 }
