@@ -57,8 +57,8 @@ public class PlanetManager : MonoBehaviour
         v2[1] = -0.5;
         v2[2] = 0.0;
 
-        MakeAPlanet(1.0, r1, v1);
-        MakeAPlanet(1.0, r2, v2);
+        Planet.MakeAPlanet(1.0, r1, v1);
+        Planet.MakeAPlanet(1.0, r2, v2);
     }
 
     void CalcForces(double[] mass, double[,] pos, double[,] fArr)

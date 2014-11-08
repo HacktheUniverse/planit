@@ -32,7 +32,7 @@ public class Planet : MonoBehaviour {
 	    this.transform.position = new Vector3((float)pos[0], (float)pos[1], (float)pos[2]);
 	}
 
-    void MakeAPlanet(double m, double[] r, double[] v)
+    public static void MakeAPlanet(double m, double[] r, double[] v)
     {
         GameObject o = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         o.transform.position = new Vector3((float)r[0], (float)r[1], (float)r[2]);
