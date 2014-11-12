@@ -27,4 +27,7 @@ http://planetpixelemporium.com/planets.html, for some inspiration,
 http://fossies.org/linux/misc/celestia-1.6.1.tar.gz/index_sa.html, and
 http://www.celestiamotherlode.net/catalog/extrasolar_stars.php
 
+<b>The team</b>
+Jack, Geoffrey, <a href ="http://diegozaks.com">Diego</a>, Tiby, Sweta, Chris, Robbie, Xiaoyi, Walter, Abby, Sara.
+
 Please let us know if we have omitted attribution. Thanks for these textures!
