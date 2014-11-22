@@ -31,4 +31,4 @@ Please let us know if we have omitted attribution. Thanks for these textures!
 
 <b>The team</b>
 
-Jack, Geoffrey, <a href ="http://diegozaks.com">Diego</a>, Tiby, Sweta, Chris, <a href="http://robby.oconnor.ninja">Robby</a>, Xiaoyi, Walter, Abby, Sara.
+Jack, Geoffrey, <a href ="http://diegozaks.com">Diego</a>, Tiby, <a href="www.teletechnophiliac.com">Sweta</a>, Chris, <a href="http://robby.oconnor.ninja">Robby</a>, Xiaoyi, Walter, Abby, Sara.
