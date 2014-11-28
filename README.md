@@ -2,6 +2,8 @@ PlanIt
 ======
 <b>Challenge</b>: Education
 
+Demo from Hack the Universe presentations: http://youtu.be/9Ub5_1z15sU?list=UUIuhq9LTleLC-GMdAOvvZcg
+
 <b>Documentation</b>
 
 <ul>
