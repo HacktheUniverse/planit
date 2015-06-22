@@ -1,8 +1,15 @@
 PlanIt
 ======
-<b>Challenge</b>: Education
 
-Demo from Hack the Universe presentations: http://youtu.be/9Ub5_1z15sU?list=UUIuhq9LTleLC-GMdAOvvZcg
+<h3>Videos</h3>
+<ul>
+  <li><a href="http://youtu.be/9Ub5_1z15sU?list=UUIuhq9LTleLC-GMdAOvvZcg">Demo from Hack the Universe presentations</a></li> 
+  <li><a href="https://www.youtube.com/watch?v=1kZKCn-b1EA">YouTube Demo</a></li>
+</ul>
+
+======
+
+<b>Challenge</b>: Education
 
 <b>Documentation</b>
 
@@ -11,7 +18,7 @@ Demo from Hack the Universe presentations: http://youtu.be/9Ub5_1z15sU?list=UUIu
   <li><a href="https://docs.google.com/document/d/1NRsV8z4PRxQyj5KXDFJ7u6r6H8IYyU4FPS8bEOQhfeU/edit?usp=sharing_eid">Process flow</a></li>
   <li><a href="http://invis.io/S91NQTD7Z">Clickthrough UI Prototype</a></li>
   <li><a href="https://drive.google.com/file/d/0BzC7ykt2a_4STGdkcDh6RFNYSDg/view?usp=sharing">Preso Slides</a></li>
-  <li><a href="https://www.youtube.com/watch?v=1kZKCn-b1EA">YouTube Demo</a></li>
+  
 </ul>
 
 We have an API -- it's not integrated.
